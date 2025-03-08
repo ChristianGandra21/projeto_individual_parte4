@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha na floresta dos peixes</title>
+
+    <!-- Importa a biblioteca Phaser na versão 3.55.2 via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
+
+    <style>
+        /* Define o estilo do corpo da página */
+        body {
+            background-color: #16303C; /* Define a cor de fundo da página */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Garante que o conteúdo ocupe 100% da altura da tela */
+            margin: 0; /* Remove margens padrão */
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+        // Importa os arquivos das diferentes cenas do jogo
+        import MainMenu from './mainMenu.js';  // Cena do menu principal
+        import Instructions from './instructions.js'; // Cena das instruções do jogo
+        import GameScene from './gameScene.js'; // Cena principal do jogo
+        import BattleScene from './battleScene.js'; // Cena de batalha
+        import Finish from './finish.js'; // Cena de finalização do jogo
+
+        // Configuração do jogo Phaser
+        const config = {
+            type: Phaser.AUTO, // Define o renderizador automaticamente (WebGL ou Canvas)
+            width: 800, // Largura do jogo em pixels
+            height: 600, // Altura do jogo em pixels
+            physics: {
+                default: 'arcade', // Define a física padrão como "arcade"
+                arcade: {
+                    gravity: { y: 300 }, // Define a gravidade no eixo Y
+                    debug: false // Desativa o modo de depuração
+                }
+            },
+            scene: [MainMenu, Instructions, GameScene, BattleScene, Finish] // Lista de cenas usadas no jogo
+        };
+
+        // Cria uma nova instância do jogo Phaser com as configurações definidas
+        new Phaser.Game(config);
+    </script>
+</body>
+</html>
