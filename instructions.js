@@ -5,12 +5,12 @@ class Instructions extends Phaser.Scene {
 
     preload() {
         // Carrega as imagens das teclas
-        this.load.spritesheet('space', '/assets/menu/keyboard/backspace.png', { frameWidth: 65, frameHeight: 32 });
-        this.load.spritesheet('up', '/assets/menu/keyboard/seta_cima.png', { frameWidth: 33, frameHeight: 32 });
-        this.load.spritesheet('right', '/assets/menu/keyboard/seta_direita.png', { frameWidth: 33, frameHeight: 32 });
-        this.load.spritesheet('left', '/assets/menu/keyboard/seta_esquerda.png', { frameWidth: 33, frameHeight: 32 });
+        this.load.spritesheet('space', './assets/menu/keyboard/backspace.png', { frameWidth: 65, frameHeight: 32 });
+        this.load.spritesheet('up', './assets/menu/keyboard/seta_cima.png', { frameWidth: 33, frameHeight: 32 });
+        this.load.spritesheet('right', './assets/menu/keyboard/seta_direita.png', { frameWidth: 33, frameHeight: 32 });
+        this.load.spritesheet('left', './assets/menu/keyboard/seta_esquerda.png', { frameWidth: 33, frameHeight: 32 });
 
-        this.load.image('back', '/assets/menu/back_button.png');
+        this.load.image('back', './assets/menu/back_button.png');
     }
 
     create() {
